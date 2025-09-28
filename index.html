@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tyre Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+     
+    <h1>DTS AUTO</h1>
+    <div class="logo">0742880833</div>
+    
+  </header>
+
+  <div class="container">
+    <!-- Sidebar filters -->
+    <aside class="sidebar">
+      <h3>Brand</h3>
+      <label><input type="checkbox" name="brand" value="RoadKing" checked> RoadKing</label>
+      <label><input type="checkbox" name="brand" value="SpeedMax" checked> SpeedMax</label>
+      <label><input type="checkbox" name="brand" value="Gripstone" checked> Gripstone</label>
+      <label><input type="checkbox" name="brand" value="AeroTire" checked> AeroTire</label>
+
+      <h3>Season</h3>
+      <label><input type="checkbox" name="season" value="Summer" checked> Summer</label>
+      <label><input type="checkbox" name="season" value="Winter" checked> Winter</label>
+      <label><input type="checkbox" name="season" value="All-Season" checked> All-Season</label>
+
+      <h3>Diameter</h3>
+      <label><input type="checkbox" name="diameter" value="15" checked> 15"</label>
+      <label><input type="checkbox" name="diameter" value="16" checked> 16"</label>
+      <label><input type="checkbox" name="diameter" value="17" checked> 17"</label>
+      <label><input type="checkbox" name="diameter" value="18" checked> 18"</label>
+
+      <h3>Price (KSh)</h3>
+      <input type="number" id="minPrice" placeholder="Min">
+      <input type="number" id="maxPrice" placeholder="Max">
+      <button id="priceApply">Apply</button>
+      <button id="clearFilters">Clear</button>
+    </aside>
+
+    <!-- Main content -->
+    <main>
+      <div class="search-sort">
+        <input type="text" id="q" placeholder="Search by model or spec">
+        <button id="searchBtn">Search</button>
+        <select id="sortBy">
+          <option value="relevance">Sort by Relevance</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+        </select>
+        <select id="perPage">
+          <option value="9">9 per page</option>
+          <option value="12">12 per page</option>
+          <option value="24">24 per page</option>
+        </select>
+      </div>
+
+      <div class="grid" id="tyreGrid"></div>
+      <div class="pagination" id="pagination"></div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="backdrop">
+    <div class="modal">
+      <span class="close" id="closeModal">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <h3 id="modalTitle"></h3>
+      <p id="modalSpecs"></p>
+      <p><span id="modalPrice"></span> <span id="modalOldPrice"></span></p>
+      <p id="modalStock"></p>
+      <button id="modalClose2">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
